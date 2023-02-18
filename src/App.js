@@ -9,11 +9,16 @@ import Footer from "./components/Footer";
 import Store from "./pages/Store";
 import Teams from "./pages/Teams";
 import About from "./pages/About";
+import Product from "./pages/Product";
+import { useState } from "react";
 function App() {
+  const [forward, setForward] = useState(false);
+
   return (
     <>
       <Router>
         <Header />
+        {/* <Product /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

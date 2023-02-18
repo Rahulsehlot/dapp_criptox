@@ -9,17 +9,17 @@ const DropDown = () => {
   };
   return (
     <>
-      <div class="flex flex-row justify-center min-h-screen pt-4 bg-gray-100 min-w-screen">
-        <div class="flex-none p-2">
+      <div clasms="flex flex-row justify-center min-h-screen pt-4 bg-gray-100 min-w-screen">
+        <div className="flex-none p-2">
           <button
             onClick={onClick}
-            class="flex flex-row justify-between w-48 px-2 py-2 text-gray-700 bg-white border-2 border-white rounded-md shadow focus:outline-none focus:border-blue-600"
+            className="flex flex-row justify-between w-48 px-2 py-2 text-gray-700 bg-white border-2 border-white rounded-md shadow focus:outline-none focus:border-blue-600"
           >
-            <span class="select-none">Select an item</span>
+            <span className="select-none">Select an item</span>
 
             <svg
               id="arrow-down"
-              class="hidden w-6 h-6 stroke-current"
+              className="hidden w-6 h-6 stroke-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
             >
@@ -31,7 +31,7 @@ const DropDown = () => {
             </svg>
             <svg
               id="arrow-up"
-              class="w-6 h-6 stroke-current"
+              className="w-6 h-6 stroke-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
             >
@@ -45,23 +45,23 @@ const DropDown = () => {
 
           <div
             id="options"
-            class="hidden w-48 py-2 mt-2 bg-white rounded-lg shadow-xl"
+            className="hidden w-48 py-2 mt-2 bg-white rounded-lg shadow-xl"
           >
             <a
               href="#"
-              class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
+              className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
             >
               Item 1
             </a>
             <a
               href="#"
-              class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
+              className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
             >
               Item 2
             </a>
             <a
               href="#"
-              class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
+              className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
             >
               Item 3
             </a>

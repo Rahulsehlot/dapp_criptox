@@ -9,7 +9,7 @@ const Header = () => {
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <img
               src={Nft}
-              class="w-20 h-20 mt-1 ml-4 text-white p-2 rounded-full"
+              className="w-20 h-20 mt-1 ml-4 text-white p-2 rounded-full"
               alt="imgage"
             />
             <span className="ml-3.5 mt-.5 text-3xl ">Criftoz</span>

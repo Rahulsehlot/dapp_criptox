@@ -17,7 +17,7 @@ const Footer = () => {
                 {" "}
                 <img
                   src={Nft}
-                  class="w-24 h-24 text-white p-2 rounded-full"
+                  className="w-24 h-24 text-white p-2 rounded-full"
                   alt="imgage"
                 />
                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
