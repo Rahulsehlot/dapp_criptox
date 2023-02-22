@@ -9,33 +9,39 @@ import Footer from "./components/Footer";
 import Store from "./pages/Store";
 import Teams from "./pages/Teams";
 import About from "./pages/About";
-import { useContext, useEffect, useState } from "react";
-import { loadWeb3 } from "./shared/Freshers";
-import { onAuthStateChanged } from "firebase/auth";
-import { latestPrice, setGlobalState, useGlobalState } from "./store";
-import { auth } from "./firebase";
+import { useContext, useEffect } from "react";
+// import { useGlobalState } from "./store";
 import AuthGuard from "./AuthGuard";
 import { SceneContext } from "./SceneContext";
+// import { ethers } from "ethers";
+import { loadWeb3 } from "./shared/Freshers";
+
 function App() {
   const { loggedIn } = useContext(SceneContext);
-  const [user, setUser] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [alert] = useGlobalState("alert");
+
   useEffect(() => {
-    while (!loadWeb3()) {
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          setUser(user);
-          setGlobalState("isLoggedIn", true);
-        } else {
-          setUser(null);
-          setGlobalState("isLoggedIn", false);
-        }
-        setIsLoaded(true);
-      });
-      latestPrice();
-    }
+    loadWeb3();
+    isWalletConnected();
   }, []);
+
+  const isWalletConnected = async () => {
+    try {
+      const { ethereum } = window;
+
+      const accounts = await ethereum.request({ method: "eth_accounts" });
+      console.log("accounts: ", accounts);
+
+      if (accounts.length > 0) {
+        const account = accounts[0];
+        console.log("wallet is connected! " + account);
+      } else {
+        alert("make sure MetaMask is connected");
+      }
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  };
+
   return (
     <>
       {/* {isLoaded ? ( */}
