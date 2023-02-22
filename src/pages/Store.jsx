@@ -7,38 +7,63 @@ const Store = () => {
   const productData = [
     {
       url: `${url}1.jpg`,
-      Name: "Nano Droid",
+      Name: "Beans",
       Price: "22.76",
     },
     {
       url: `${url}2.jpg`,
-      Name: "Mono Droid",
+      Name: "Bonker",
       Price: "35.76",
     },
     {
       url: `${url}3.jpg`,
-      Name: "Nano Droid",
+      Name: "Bubbles",
       Price: "56.76",
     },
     {
       url: `${url}4.jpg`,
-      Name: "Mono Droid",
+      Name: "Chuckles",
       Price: "15.76",
     },
     {
       url: `${url}5.jpg`,
-      Name: "Nano Droid",
+      Name: "Gonzo",
       Price: "69.76",
     },
     {
       url: `${url}6.jpg`,
-      Name: "Mono Droid",
+      Name: "Goofy",
       Price: "96.76",
     },
     {
       url: `${url}7.jpg`,
-      Name: "Nano Droid",
+      Name: "Loco",
       Price: "12.76",
+    },
+    {
+      url: `${url}8.jpg`,
+      Name: "Fuzzy",
+      Price: "12.76",
+    },
+    {
+      url: `${url}9.jpg`,
+      Name: "Twiggy",
+      Price: "17.76",
+    },
+    {
+      url: `${url}10.jpg`,
+      Name: "Muffin",
+      Price: "16.76",
+    },
+    {
+      url: `${url}11.jpg`,
+      Name: "Koko",
+      Price: "72.76",
+    },
+    {
+      url: `${url}12.jpg`,
+      Name: "Caesar",
+      Price: "92.76",
     },
   ];
 
