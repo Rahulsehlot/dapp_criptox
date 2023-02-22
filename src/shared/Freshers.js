@@ -23,14 +23,12 @@ const payWithEthers = async (price, name) => {
     const web3 = window.web3;
     const accounts = await web3.eth.getAccounts();
     const account = accounts[0];
-    // console.log(web3);
     // toWei(number [, unit]) Converts any ether value value into wei. “wei” are the smallest ethere unit, and you should always make calculations in wei and convert only for display reasons.
     const amount = web3.utils.toWei(price.toString(), "ether");
     const purpose = `Sales of `;
     const contract = await getContract();
     const seller = 0xc1448fd1304cba6b951ac0cc5601f495fa7ea23e;
     console.log(contract);
-    // console.log(" Name " + name + " Price " + amount);
 
     await contract.methods
       .payNow(seller, purpose)

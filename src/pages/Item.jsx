@@ -1,11 +1,9 @@
-import { FirebaseError } from "firebase/app";
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
-import Cart from "../pages/Cart";
-import { connectWallet, loadWeb3 } from "../shared/Freshers";
+import Cart from "./Cart";
+import { connectWallet } from "../shared/Freshers";
 import { useGlobalState } from "../store";
-import CartItem from "./CartItem";
+import f1 from "../images/f1.jpg";
+
 const Item = ({ url, name, price }) => {
   const [show, setShow] = useState(false);
   const [account] = useGlobalState("connectedAccount");
@@ -17,15 +15,14 @@ const Item = ({ url, name, price }) => {
       setShow(true);
     }
   };
-
   return (
     <>
       <div className="lg:w-1/4 before:md:w-1/2 p-4 w-full ">
-        <a className="block h-48 rounded overflow-hidden">
+        <a className="block h-84 rounded overflow-hidden">
           <img
+            src={url}
             alt="ecommerce"
             className="object-cover object-center w-full h-full block"
-            src={url}
           />
         </a>
         <div className="mt-4">

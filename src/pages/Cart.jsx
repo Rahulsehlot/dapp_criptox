@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import abi from "../shared/abis/Store.json";
-
 import { ethers } from "ethers";
+import Web3 from "web3";
 
 function Cart({ url, name, price }) {
-  const contractAddress = "0xDBa03676a2fBb6711CB652beF5B7416A53c1421D";
+  const contractAddress = "0x171e6D075Aa24629EAB3F0f5aC6720aaCcb7bb16";
   const contractABI = abi.abi;
   const [currentAccount, setCurrentAccount] = useState("");
 
@@ -26,10 +26,11 @@ function Cart({ url, name, price }) {
     }
   };
 
-  const buysProduct = async () => {
+  const buyProduct = async () => {
+    const web3 = window.web3;
     try {
       const { ethereum } = window;
-
+      console.log(ethereum);
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum, "any");
         const signer = provider.getSigner();
@@ -38,17 +39,23 @@ function Cart({ url, name, price }) {
           contractABI,
           signer
         );
+        const response = await fetch(
+          "https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=ETH"
+        );
+        const data = ((await response.json()).ETH / price).toFixed(15);
+        console.log(data);
 
-        console.log("buying coffee..");
-        const coffeeTxn = await buyProduct.buysProduct(name ? name : "name", {
-          value: ethers.utils.parseEther("2"),
+        console.log("buying " + name + " ..");
+
+        const productTxn = await buyProduct.buysProduct(name ? name : "name", {
+          value: ethers.utils.parseEther(data.toString()),
         });
 
-        await coffeeTxn.wait();
+        await productTxn.wait();
 
-        console.log("mined ", coffeeTxn.hash);
+        console.log("mined ", productTxn.hash);
 
-        console.log("coffee purchased!");
+        console.log(name + " purchased!");
       }
     } catch (error) {
       console.log(error);
@@ -90,7 +97,7 @@ function Cart({ url, name, price }) {
           </form>
           <button
             class="bg-violet-900 h-12 w-full py-1 px-3 focus:outline-none hover:bg-violet-400  rounded-md text-lg mt-4 md:mt-3 mr-4 text-white"
-            // onClick={}
+            onClick={buyProduct}
           >
             CheckOut
           </button>
