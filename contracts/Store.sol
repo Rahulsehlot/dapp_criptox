@@ -50,11 +50,10 @@ contract Store {
     }
 
     // Performing sales payment
-    function payNow(address seller, string memory purpose)
-        public
-        payable
-        returns (bool success)
-    {
+    function payNow(
+        address seller,
+        string memory purpose
+    ) public payable returns (bool success) {
         // Validating payments
         require(msg.value > 0, "Ethers cannot be zerro!");
         require(msg.sender != storeOwner, "Sale Not allowed");
@@ -89,10 +88,10 @@ contract Store {
     }
 
     // Performs ethers transfer
-    function withdrawMoneyTo(address receiver, uint256 amount)
-        internal
-        returns (bool success)
-    {
+    function withdrawMoneyTo(
+        address receiver,
+        uint256 amount
+    ) internal returns (bool success) {
         require(storeAcc >= amount, "Insufficent Fund!");
 
         _payTo(receiver, amount);

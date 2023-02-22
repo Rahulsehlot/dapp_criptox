@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import nft2 from "../images/nft5.jpg";
 import { Link } from "react-router-dom";
 import f1 from "../images/f1.jpg";
 import f2 from "../images/f2.jpg";
 import f3 from "../images/f3.jpg";
+import { SceneContext } from "../SceneContext";
 const Home = () => {
+  const { loggedIn } = useContext(SceneContext);
+
   return (
     <>
       <div
@@ -22,14 +25,18 @@ const Home = () => {
               -Criftoz
             </div>
           </h1>
-          <div className="ml-20 ">
-            <button className=" bg-violet-900 w-24 py-1 px-3 focus:outline-none hover:bg-violet-400  rounded-md text-lg mt-4 md:mt-3 mr-4 text-white ">
-              <Link to="/login"> SignIn</Link>
-            </button>
-            <button className=" bg-violet-900 w-24 py-1 px-3 focus:outline-none hover:bg-violet-400 rounded-md text-lg mt-4 md:mt-3 ml-3 mr-16   text-white">
-              <Link to="/register"> SignUp</Link>
-            </button>
-          </div>
+          {loggedIn ? (
+            <></>
+          ) : (
+            <div className="ml-20 ">
+              <button className=" bg-violet-900 w-24 py-1 px-3 focus:outline-none hover:bg-violet-400  rounded-md text-lg mt-4 md:mt-3 mr-4 text-white ">
+                <Link to="/login"> SignIn</Link>
+              </button>
+              <button className=" bg-violet-900 w-24 py-1 px-3 focus:outline-none hover:bg-violet-400 rounded-md text-lg mt-4 md:mt-3 ml-3 mr-16   text-white">
+                <Link to="/register"> SignUp</Link>
+              </button>
+            </div>
+          )}
         </div>
       </div>
 

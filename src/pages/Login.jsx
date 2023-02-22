@@ -1,11 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import { setAlert } from "../store";
 import { logInWithEmailAndPassword } from "../firebase";
+import { SceneContext } from "../SceneContext";
 const Login = () => {
+  const { setloggedIn } = useContext(SceneContext);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -14,10 +17,12 @@ const Login = () => {
   const { email, password } = formData;
   const navigate = useNavigate();
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (email == "" || password == "") return;
     logInWithEmailAndPassword(email, password).then((user) => {
+      setloggedIn(user);
+
       if (user) {
         resetForm();
         setAlert("Logged in successfully");

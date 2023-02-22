@@ -11105,9 +11105,7 @@
   "ast": {
     "absolutePath": "project:/contracts/Store.sol",
     "exportedSymbols": {
-      "Store": [
-        270
-      ]
+      "Store": [270]
     },
     "id": 271,
     "license": "MIT",
@@ -11115,12 +11113,7 @@
     "nodes": [
       {
         "id": 34,
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".4"
-        ],
+        "literals": ["solidity", "^", "0.8", ".4"],
         "nodeType": "PragmaDirective",
         "src": "33:23:1"
       },
@@ -11132,9 +11125,7 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 270,
-        "linearizedBaseContracts": [
-          270
-        ],
+        "linearizedBaseContracts": [270],
         "name": "Store",
         "nameLocation": "69:5:1",
         "nodeType": "ContractDefinition",
@@ -12140,10 +12131,7 @@
                       "id": 116,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "1404:7:1",
                       "typeDescriptions": {
@@ -12260,10 +12248,7 @@
                       "id": 124,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "1464:7:1",
                       "typeDescriptions": {
@@ -12291,9 +12276,7 @@
                   "src": "1464:53:1"
                 },
                 {
-                  "assignments": [
-                    133
-                  ],
+                  "assignments": [133],
                   "declarations": [
                     {
                       "constant": false,
@@ -12434,9 +12417,7 @@
                   "src": "1570:44:1"
                 },
                 {
-                  "assignments": [
-                    143
-                  ],
+                  "assignments": [143],
                   "declarations": [
                     {
                       "constant": false,
@@ -13305,10 +13286,7 @@
               "src": "2338:104:1",
               "statements": [
                 {
-                  "assignments": [
-                    208,
-                    null
-                  ],
+                  "assignments": [208, null],
                   "declarations": [
                     {
                       "constant": false,
@@ -13448,9 +13426,7 @@
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "names": [
-                        "value"
-                      ],
+                      "names": ["value"],
                       "nodeType": "FunctionCallOptions",
                       "options": [
                         {
@@ -13516,10 +13492,7 @@
                       "id": 219,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "2417:7:1",
                       "typeDescriptions": {
@@ -13711,10 +13684,7 @@
                       "id": 233,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "2608:7:1",
                       "typeDescriptions": {

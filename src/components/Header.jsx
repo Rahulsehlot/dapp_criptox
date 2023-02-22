@@ -1,7 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../firebase";
 import Nft from "../images/nft1.png";
+import { SceneContext } from "../SceneContext";
+import { connectWallet } from "../shared/Freshers";
+
+import { useGlobalState } from "../store";
 const Header = () => {
+  const [account] = useGlobalState("connectedAccount");
+  const { loggedIn, setloggedIn } = useContext(SceneContext);
+  const [isLoggedIn] = useGlobalState("isLoggedIn");
+  const navigate = useNavigate();
+  const handleSignOut = () => {
+    logout().then((res) => {
+      if (res) {
+        alert("Logged out successfully");
+        navigate("/login");
+        setloggedIn("");
+      }
+    });
+  };
   return (
     <>
       <header className=" sticky top-0 text-gray-600 bg-white body-font border-b-2 cursor-pointer">
@@ -18,9 +36,17 @@ const Header = () => {
             <Link to="/" className="mr-7 mt-1  hover:text-gray-900">
               Home
             </Link>
-            <Link to="/profile/store" className="mr-7 mt-1 hover:text-gray-900">
-              Store
-            </Link>
+            {loggedIn ? (
+              <Link
+                to="/profile/store"
+                className="mr-7 mt-1 hover:text-gray-900"
+              >
+                Store
+              </Link>
+            ) : (
+              <></>
+            )}
+
             <Link to="/teams" className="mr-7 mt-1 hover:text-gray-900">
               Teams
             </Link>
@@ -28,12 +54,29 @@ const Header = () => {
               About
             </Link>
           </nav>
-          <button className=" bg-violet-900 w-24 py-1 px-3 focus:outline-none hover:bg-violet-400  rounded-md text-lg mt-4 md:mt-3 mr-4 text-white ">
+          {/* <button className=" bg-violet-900 w-24 py-1 px-3 focus:outline-none hover:bg-violet-400  rounded-md text-lg mt-4 md:mt-3 mr-4 text-white ">
             <Link to="/login"> SignIn</Link>
-          </button>
-          <button className=" bg-violet-900 w-24 py-1 px-3 focus:outline-none hover:bg-violet-400 rounded-md text-lg mt-4 md:mt-3 ml-3 mr-16   text-white">
-            <Link to="/register"> SignUp</Link>
-          </button>
+          </button> */}
+          {loggedIn ? (
+            <>
+              {account ? null : (
+                <button
+                  className=" bg-violet-900 w-24  h-10 py-1 px-3 focus:outline-none hover:bg-violet-400 rounded-md text-xs mt-4 md:mt-3 ml-3 mr-13   text-white"
+                  onClick={connectWallet}
+                >
+                  Connect Wallet
+                </button>
+              )}
+              <button
+                className=" bg-violet-900 w-24 h-10 py-1 px-3 focus:outline-none hover:bg-violet-400 rounded-md text-lg mt-4 md:mt-3 ml-3 mr-16   text-white"
+                onClick={handleSignOut}
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </header>
     </>
