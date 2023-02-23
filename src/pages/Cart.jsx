@@ -64,39 +64,31 @@ function Cart({ url, name, price }) {
 
   return (
     <div className="cart-wrapper">
-      <div class="card">
-        <div class="leftside">
+      <div className="card">
+        <div className="leftside">
           <img src={url} className="product" alt="Shoes" />
           <div className="left_side_text">
             <h1 className="it">{name}</h1>
             <h1 className="it">{price}</h1>
           </div>
         </div>
-        <div class="rightside">
+        <div className="rightside">
           <form action="">
             <h1 style={{ fontSize: "150%" }}>CheckOut</h1>
             <h2>Information</h2>
             <p>Name</p>
-            <input type="text" class="inputbox" name="name" required />
+            <input type="text" className="inputbox" name="name" required />
             <p>Email</p>
             <input
               type="text"
-              class="inputbox"
+              className="inputbox"
               name="email"
               id="email"
               required
             />
-            <p>Address</p>
-            <input
-              type="text"
-              class="inputbox"
-              name="address"
-              id="address"
-              required
-            />
           </form>
           <button
-            class="bg-violet-900 h-12 w-full py-1 px-3 focus:outline-none hover:bg-violet-400  rounded-md text-lg mt-4 md:mt-3 mr-4 text-white"
+            className="bg-violet-900 h-12 w-full py-1 px-3 focus:outline-none hover:bg-violet-400  rounded-md text-lg mt-4 md:mt-3 mr-4 text-white"
             onClick={buyProduct}
           >
             CheckOut

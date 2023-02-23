@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import nft2 from "../images/nft5.jpg";
 import { Link } from "react-router-dom";
 import f1 from "../images/f1.jpg";
-import f2 from "../images/f2.jpg";
-import f3 from "../images/f3.jpg";
+import f2 from "../images/2.jpg";
+import f3 from "../images/3.jpg";
+import f4 from "../images/1.jpg";
+
 import { SceneContext } from "../SceneContext";
 const Home = () => {
   const { loggedIn } = useContext(SceneContext);
@@ -69,7 +71,7 @@ const Home = () => {
           </div>
           <div className="h-[20rem] w-[17.6rem]  ml-8 mt-1 cursor-pointer">
             <img
-              src={f1}
+              src={f4}
               alt="image1"
               className="h-[19rem] mt-1.5 rounded-xl shadow-xl"
             />

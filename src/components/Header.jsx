@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../firebase";
 import Nft from "../images/nft1.png";
@@ -20,6 +21,7 @@ const Header = () => {
       }
     });
   };
+
   return (
     <>
       <header className=" sticky top-0 text-gray-600 bg-white body-font border-b-2 cursor-pointer">
@@ -54,9 +56,6 @@ const Header = () => {
               About
             </Link>
           </nav>
-          {/* <button className=" bg-violet-900 w-24 py-1 px-3 focus:outline-none hover:bg-violet-400  rounded-md text-lg mt-4 md:mt-3 mr-4 text-white ">
-            <Link to="/login"> SignIn</Link>
-          </button> */}
           {loggedIn ? (
             <>
               {account ? null : (

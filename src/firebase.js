@@ -8,20 +8,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-import {
-  getFirestore,
-  query,
-  getDocs,
-  updateDoc,
-  collection,
-  collectionGroup,
-  orderBy,
-  deleteDoc,
-  addDoc,
-  doc,
-  setDoc,
-  serverTimestamp,
-} from "firebase/firestore";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBO-J8eAEUpC0KX3UpEU3B7EKj3pVZL7l0",
