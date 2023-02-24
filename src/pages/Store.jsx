@@ -69,7 +69,7 @@ const Store = () => {
 
   return (
     <>
-      <div className="container px-5 py-24 mx-auto  bg-gray-50 dark:bg-gray-900">
+      <div className="container px-5 py-24 mx-auto border-b-2 bg-gray-50 dark:bg-gray-900">
         <div className="flex flex-wrap ">
           {productData.map((data, key) => {
             return (

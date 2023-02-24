@@ -35,7 +35,7 @@ const Header = () => {
             <span className="ml-3.5 mt-.5 text-3xl ">Criftoz</span>
           </a>
           <nav className="md:ml-auto md:mr-auto ml-0 flex flex-wrap text-xl ">
-            <Link to="/" className="mr-7 mt-1  hover:text-gray-900">
+            <Link to="/" className="mr-7 mt-1  hover:text-gray-900 ">
               Home
             </Link>
             {loggedIn ? (
